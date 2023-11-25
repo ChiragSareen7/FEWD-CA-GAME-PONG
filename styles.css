@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:ital,wght@0,400;1,100&display=swap');
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  :root {
+
+    background-image: url("./ezgif-4-bbcbc12f84.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  body {
+    margin: 0;
+
+    overflow: hidden;
+    background-image: url("./ezgif-4-bbcbc12f84.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Bungee Hairline;
+  }
+  
+  .paddle {
+    --position: 50;
+  
+    position: absolute;
+
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+    width: 1vh;
+    height: 10vh;
+    background-color: whitesmoke;
+  }
+  
+  .paddle.left {
+    left: 1vw;
+  }
+  
+  .paddle.right {
+    right: 1vw;
+  }
+  
+  .ball {
+    --x: 50;
+    --y: 50;
+     background-image: url("./image0_0.png");
+    position: absolute;
+    
+    background-size: cover;
+    left: calc(var(--x) * 1vw);
+    top: calc(var(--y) * 1vh);
+    
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+  }
+  
+  .score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    
+    color: whitesmoke;
+  }
+  
+
+  
+  .score > :first-child {
+    text-align: right;
+
+    border-right: .1vh solid whitesmoke;
+  }
+  #timer {
+    width: 5vw;
+    position: absolute;
+    top: 2vh;
+    right: 3vh;
+    font-size: 3vw;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: whitesmoke;
+}
+.phone{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+#up{
+  background-color: transparent;
+    color: whitesmoke;
+    font-family: Bungee Hairline;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: xx-large;
+    box-shadow: 5px 5px whitesmoke;
+    
+    position: fixed;
+    bottom: 2vw;
+    left: 1vw;
+}
+#down{
+  background-color: transparent;
+    color: whitesmoke;
+    font-family: Bungee Hairline;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: xx-large;
+    box-shadow: 5px 5px whitesmoke;
+    
+    position: fixed;
+    bottom: 2vw;
+    right: 1vw;
+}
+.names{
+  display: flex;
+  justify-content: space-between;
+ 
+  color: whitesmoke;
+  font-family: Bungee Hairline;
+ 
+    font-weight: bolder;
+    font-size: x-large;
+}
+.nam{
+  color: whitesmoke;
+  font-family: Bungee Hairline;
+
+    font-weight: bolder;
+    font-size: x-large;
+}
+.pam{
+  color: whitesmoke;
+  font-family: Bungee Hairline;
+
+    font-weight: bolder;
+    font-size: x-large;
+}

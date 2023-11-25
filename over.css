@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:ital,wght@0,400;1,100&display=swap');
+body{
+    font-family: Bungee Hairline;
+    background-image: url("./ezgif-4-bbcbc12f84.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.head{
+    color: whitesmoke;
+    font-size: 10vh;
+    text-align: center;
+    font-weight: bolder;
+}
+.yo{
+    background-color: transparent;
+    color: whitesmoke;
+    font-family: Bungee Hairline;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: xx-large;
+    box-shadow: 5px 5px whitesmoke;
+    margin-left: 85vh;
+    margin-top: 30vh;
+}
+#score-box{
+    color: whitesmoke;
+    font-family: Bungee Hairline;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+}
+#phrase{
+    color: whitesmoke;
+    font-family: Bungee Hairline;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+}
