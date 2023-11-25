@@ -38,3 +38,19 @@ body{
     font-size: xx-large;
     box-shadow: 5px 5px whitesmoke;
 }
+.rotate{
+display: none;
+}
+@media(max-width: 600px){
+    #coin{
+        display: none;
+    }
+    .rotate{
+        display: flex;
+        font-size: 70px;
+        color: white;
+    }
+    body{
+        background-color: black;
+    }
+}

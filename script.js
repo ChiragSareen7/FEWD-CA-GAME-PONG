@@ -1,6 +1,6 @@
 import Ball from "./Ball.js"
 import Paddle from "./Paddle.js"
-
+//getting elements
 const ball = new Ball(document.getElementById("comet"))
 const playerwall = new Paddle(document.getElementById("playerwall"))
 const computerwall = new Paddle(document.getElementById("computerwall"))
@@ -16,12 +16,12 @@ function lost() {
 }
 
 let score=0
-
+// updating the score
 function Lose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
     playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
-    handleGameEnd()
+    end()
     localStorage.setItem("scoreCard",parseInt(playerScoreElem.textContent) )
 
   } else {
@@ -30,7 +30,7 @@ function Lose() {
   ball.reset()
   computerwall.reset()
 }
-function handleGameEnd() {
+function end() {
 
     if (parseInt(playerScoreElem.textContent) === 5) {
       console.log("Player won!");
@@ -42,19 +42,21 @@ function handleGameEnd() {
   
     
   }
-  handleGameEnd()
-
+  end()
+// mousemove to move the player wall with respect to the mouse
 document.addEventListener("mousemove", t => {
   playerwall.position = (t.y / window.innerHeight) * 100
 })
 
 window.requestAnimationFrame(start)
+
+//timer to make the game over
 var timer = document.getElementById("timer")
-var time = 60
+var time = 100
 
 var timerId;
 function showtimer() {
-    time = 60
+    time = 100
     timer.innerText = time
     timerId = setInterval(() => {
         time--
@@ -65,6 +67,8 @@ function showtimer() {
 }
 
 showtimer()
+
+//audio whil the game is being played
 var sound = new Audio("/music.mp3");
 sound.loop=true;
 sound.play();
@@ -74,29 +78,31 @@ let moveDirection = null;
 
 
 
-function startMoving(direction) {
+function move(direction) {
   moveDirection = direction;
 }
 
-function stopMoving() {
+function nomove() {
   moveDirection = null;
 }
 
 
 document.getElementById("up").addEventListener("touchstart", (event) => {
-  event.preventDefault(); // Prevent default touch behavior
-  startMoving('up');
+  // prevet default will make the paddle stay at the position 
+  event.preventDefault(); 
+  move('up');
 });
 
 document.getElementById("down").addEventListener("touchstart", (event) => {
-  event.preventDefault(); // Prevent default touch behavior
-  startMoving('down');
+  // prevet default will make the paddle stay at the position 
+  event.preventDefault(); 
+  move('down');
 });
 
-document.getElementById("up").addEventListener("touchend", stopMoving);
-document.getElementById("down").addEventListener("touchend", stopMoving);
+document.getElementById("up").addEventListener("touchend", nomove);
+document.getElementById("down").addEventListener("touchend", nomove);
 
-// Modify the start function to handle paddle movement based on the button press
+// frame animation for changing the frames for movement asteroid and wall
 function start(time) {
   if (lastTime != null) {
     const change = time - lastTime;
@@ -107,6 +113,7 @@ function start(time) {
   }
 
   // Move the player paddle based on the button press
+
   if (moveDirection === "up") {
     playerwall.position = Math.max(playerwall.position - 1, 0);
   } else if (moveDirection === "down") {

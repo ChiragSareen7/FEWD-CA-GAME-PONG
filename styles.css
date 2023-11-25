@@ -21,11 +21,13 @@
   }
   
   .paddle {
+/* to change the position of paddle using js */
     --position: 50;
   
     position: absolute;
 
     top: calc(var(--position) * 1vh);
+/* transform will make the paddle to be at the centre */
     transform: translateY(-50%);
     width: 1vh;
     height: 10vh;
@@ -41,15 +43,17 @@
   }
   
   .ball {
+/* to change the position of asteroid using js */
     --x: 50;
     --y: 50;
      background-image: url("./image0_0.png");
     position: absolute;
     
     background-size: cover;
+    /* this will be used in js to change the position of the asteroid*/
     left: calc(var(--x) * 1vw);
     top: calc(var(--y) * 1vh);
-    
+    /* to make the asteroid stay in center of page*/
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
