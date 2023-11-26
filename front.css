@@ -38,19 +38,28 @@ body{
     font-size: xx-large;
     box-shadow: 5px 5px whitesmoke;
 }
-.rotate{
-display: none;
+#rotate{
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-color: black;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    
+    
+    font-weight: bolder;
+    font-size: 2vh;
+    align-items: center;
 }
-@media(max-width: 600px){
-    #coin{
-        display: none;
-    }
-    .rotate{
-        display: flex;
-        font-size: 70px;
-        color: white;
-    }
-    body{
-        background-color: black;
-    }
+@media  (max-width: 600px) {
+#rotate{
+    display: flex;
+}
+#rotate img{
+    position: fixed;
+    top: 30%;
+    right: 40%;
+    background-color: rgb(65, 98, 189);
+}
 }
