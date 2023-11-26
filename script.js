@@ -35,17 +35,20 @@ function end() {
     if (parseInt(playerScoreElem.textContent) === 5) {
       console.log("Player won!");
       window.location.href = './gameover.html'
-    } else {
-      console.log("Computer won!");
-      
     }
+    else if (parseInt(computerScoreElem.textContent) === 5) {
+      console.log("Player won!");
+      window.location.href = './gameover.html'
+    }
+  
   
     
   }
   end()
 // mousemove to move the player wall with respect to the mouse
 document.addEventListener("mousemove", t => {
-  playerwall.position = (t.y / window.innerHeight) * 100
+  playerwall.position = (t.y / window.innerHeight) * 100;
+  end();
 })
 
 window.requestAnimationFrame(start)
