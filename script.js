@@ -111,7 +111,7 @@ function start(time) {
     const change = time - lastTime;
     ball.update(change, [playerwall.rect(), computerwall.rect()]);
     computerwall.update(change, ball.y);
-
+    end()
     if (lost()) Lose();
   }
 
